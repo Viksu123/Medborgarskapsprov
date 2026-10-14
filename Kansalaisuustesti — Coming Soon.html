@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kansalaisuuskoe – tulossa pian | Medborgarskapsprov | Тест на гражданство | اختبار الجنسية</title>
+<meta name="description" content="Suomen kansalaisuuskoe 2027: aihealueet, aikataulu, kenelle ja näytetehtävät. Finlands medborgarskapsprov 2027.">
+<meta name="theme-color" content="#0052B4">
+<link id="fav" rel="icon" type="image/svg+xml" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+Arabic:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('theme');if(t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.classList.add('dark')}catch(e){}</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { brand: '#0052B4', gold: '#FFC107', ink: '#0E1B33', paper: '#F6F2E9', mist: '#E6EEFA' },
+  fontFamily: { serif: ['"Source Serif 4"', 'Georgia', 'serif'], sans: ['Inter', '"Noto Sans Arabic"', 'system-ui', 'sans-serif'] }
+} } };
+</script>
+<style>
+  html[lang=ar] body, html[lang=ar] .font-serif { font-family: 'Noto Sans Arabic', system-ui, sans-serif; }
+  html[lang=ar] .uppercase { text-transform: none; letter-spacing: 0; }
+
+  .dark { color-scheme: dark; }
+  .dark body { background-color: #0F1319; color: #ECE8DF; background-image: none !important; }
+  .dark .bg-white { background-color: #171C25; }
+  .dark .bg-mist { background-color: #1E2635; }
+  .dark .bg-brand.rounded-3xl { background-color: #0B3F85; }
+  .dark .ring-white { --tw-ring-color: #171C25; }
+  .dark .ring-ink\/10 { --tw-ring-color: rgba(255,255,255,.07); }
+  .dark .border-ink\/10, .dark .border-ink\/15 { border-color: rgba(255,255,255,.12); }
+  .dark .border-brand\/20 { border-color: rgba(169,200,245,.25); }
+  .dark .hover\:border-brand:hover { border-color: #A9C8F5; }
+  .dark .text-brand { color: #A9C8F5; }
+  .dark .text-ink\/40, .dark .text-ink\/55, .dark .text-ink\/60, .dark .text-ink\/70 { color: rgba(236,232,223,.62); }
+  .dark .bg-emerald-50 { background-color: rgba(16,185,129,.14); } .dark .text-emerald-900 { color: #A7F3D0; } .dark .text-emerald-700 { color: #6EE7B7; }
+  .dark .bg-rose-50 { background-color: rgba(244,63,94,.14); } .dark .text-rose-900 { color: #FECDD3; } .dark .text-rose-700 { color: #FDA4AF; }
+</style>
+</head>
+<body class="bg-paper font-sans text-ink antialiased" style="background-image:radial-gradient(60rem 26rem at 50% -6rem,#E2EBF8,transparent 70%);background-repeat:no-repeat">
+<div class="bg-gold text-ink"><p class="mx-auto flex max-w-6xl items-center gap-2.5 px-4 py-2 text-sm font-semibold"><span class="relative flex h-2.5 w-2.5 shrink-0"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-ink/40"></span><span class="relative h-2.5 w-2.5 rounded-full bg-ink"></span></span><span id="ban"></span></p></div>
+<header class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4">
+  <a href="#" class="flex items-center gap-3">
+    <span id="logo" class="block h-12 w-[2.7rem]"></span>
+    <span class="leading-tight">
+      <span class="block font-serif text-xl font-bold text-brand">Kansalaisuuskoe</span>
+      <span id="tag" class="block text-xs font-medium uppercase tracking-wider text-ink/60"></span>
+    </span>
+  </a>
+  <div class="flex items-center gap-2"><div id="sw" class="flex rounded-full bg-white p-1 text-sm font-semibold ring-1 ring-ink/10"></div><button id="th" onclick="toggleTheme()" class="grid h-10 w-10 place-items-center rounded-full bg-white text-ink/70 ring-1 ring-ink/10 hover:text-brand"></button></div>
+</header>
+<main id="app" class="mx-auto max-w-6xl space-y-6 px-4 pb-12"></main>
+<footer class="mx-auto max-w-6xl px-4 pb-10 text-xs text-ink/60">
+  <p id="foot"></p>
+  <a href="https://migri.fi" target="_blank" rel="noopener" class="mt-2 inline-block font-semibold text-brand underline">migri.fi</a>
+</footer>
+
+<script>
+// Fyll i när Migri publicerat uppgifterna, t.ex. pass: '80 %' och fee: '… €'. null = "ej publicerat".
+const OFFICIAL = { pass: null, fee: null };
+const TEST_START = '2027-03-01T00:00:00';
+
+const SH = 'shadow-[0_1px_2px_rgba(14,27,51,0.05),0_10px_28px_-18px_rgba(14,27,51,0.25)]';
+// Logga: heraldisk sköld, nordiskt kors och två sammanfogade pusselbitar (en guld = "sista biten")
+const PB = '<rect x="-1.5" y="-6.5" width="13" height="13" rx="1"/><rect x="3.9" y="-9.6" width="2.2" height="3.2"/><circle cx="5" cy="-10" r="3.2"/>';
+const PA = '<rect x="-14.5" y="-6.5" width="13" height="13" rx="1"/><rect x="-2" y="-1.1" width="3" height="2.2"/><circle cx="1.6" cy="0" r="3.2"/><rect x="-9.1" y="6" width="2.2" height="3.2"/><circle cx="-8" cy="10" r="3.2"/>';
+const piece = (g, fill) => `<g fill="#0052B4" stroke="#0052B4" stroke-width="2.4" stroke-linejoin="round">${g}</g><g fill="${fill}">${g}</g>`;
+const P0 = 'M4 12Q32 2 60 12V36C60 54 48 64 32 70 16 64 4 54 4 36Z';
+const P1 = 'M6.4 13.6Q32 4.6 57.6 13.6V36C57.6 52.6 46.8 62 32 67.4 17.2 62 6.4 52.6 6.4 36Z';
+const P2 = 'M7.6 14.4Q32 6 56.4 14.4V36C56.4 52 46 60.8 32 66 18 60.8 7.6 52 7.6 36Z';
+const LOGO = `<svg viewBox="0 0 64 72" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><clipPath id="f"><path d="${P2}"/></clipPath></defs><path d="${P0}" fill="#0052B4"/><path d="${P1}" fill="none" stroke="#FFC107" stroke-width=".9"/><path d="${P2}" fill="#fff"/><g clip-path="url(#f)" fill="#0052B4"><rect x="22" y="0" width="8" height="72"/><rect x="0" y="30" width="64" height="8"/></g><g transform="translate(27.5 34) rotate(-40) scale(1.06) translate(1.5 0)">${piece(PB, '#FFC107')}${piece(PA, '#fff')}</g></svg>`;
+
+const LANGS = {
+  fi: { code: 'FI', dir: 'ltr', tag: 'Harjoituskoe', soon: 'Tulossa pian', theme: 'Vaihda ulkoasua', price: ['Elinikäinen pääsy', '14,99 €', 'kertamaksu', 'Avautuu sivuston lanseerauksessa, arviolta samoihin aikoihin, kun Migrin virallinen oppimateriaali julkaistaan.', 'Avautuu pian', 'Tämä on tämän harjoitussivuston hinta, ei Migrin kokeen maksu.'], ban: 'Tulossa pian – sivusto on vielä rakenteilla. Alla on näytetehtäviä.',
+    h1: 'Valmistaudu Suomen kansalaisuuskokeeseen',
+    lead: 'Uusi kansalaisuuskoe tulee pakolliseksi vuonna 2027. Täältä löydät tärkeimmät tiedot ja voit kokeilla näytetehtäviä jo nyt.',
+    count: 'päivää siihen, kun koe vaaditaan uusilta hakemuksilta (1.3.2027)',
+    facts: [['Kenelle', '18–64-vuotiaat hakijat'], ['Alkaa', 'Hakemukset 1.3.2027 alkaen'], ['Hyväksymisraja', 'Ei vielä julkistettu'], ['Hinta / yritys', 'Ei vielä julkistettu']],
+    note: 'Uusinta on sallittu niin monta kertaa kuin tarvitaan. Migri ei ole vielä kertonut hintaa eikä hyväksymisrajaa – päivitämme tiedot heti, kun ne julkaistaan.',
+    what: ['Mikä kansalaisuuskoe on?', 'Kansalaisuuskoe on uusi lisäedellytys Suomen kansalaisuuden saamiselle. Se on digitaalinen koe, jonka voi tehdä suomeksi tai ruotsiksi. Kokeen järjestää Maahanmuuttovirasto (Migri). Hyväksytty tulos ei vanhene, ja vanhat ehdot, kuten kielitaito ja asumisaika, pysyvät voimassa.'],
+    topics: ['Aihealueet', ['Suomen lait', 'Ihmisten oikeudet ja velvollisuudet', 'Tasa-arvo', 'Suomen historia ja kulttuuri', 'Maanpuolustus ja asevelvollisuus (alustava)'], 'Kysymyksiä ei tule ajankohtaisista uutisista. Ajantasaisen listan julkaisee Migri.'],
+    who: ['Kenen pitää tehdä koe?', 'Koe koskee 18–64-vuotiaita, jotka hakevat Suomen kansalaisuutta hakemuksella ja jättävät sen 1.3.2027 tai sen jälkeen. Aiemmin jätetyt hakemukset eivät tarvitse koetta. Erityisjärjestelyjä voi saada esimerkiksi sairauden tai vamman vuoksi, ja osa hakijoista voi tehdä kokeen suullisesti.'],
+    when: ['Aikataulu ja oppimateriaali', [['1.1.2027', 'Kansalaisuuslain muutokset ja uusi koe tulevat voimaan.'], ['Vuoden 2026 lopussa tai 2027 alussa', 'Migri julkaisee koepäivät, ilmoittautumisohjeet, kokeen verkkosivut ja oppimateriaalin.'], ['1.3.2027', 'Koe vaaditaan tästä päivästä jätetyiltä hakemuksilta. Kokeita järjestetään seitsemällä paikkakunnalla: pääkaupunkiseutu, Tampere, Turku, Oulu, Kuopio, Vaasa ja Rovaniemi.']]],
+    quiz: ['Näytetehtävät', 'Kysymys', '/', 'Oikein!', 'Väärin', 'Seuraava', 'Näytä tulos', 'Tulos', 'Yritä uudelleen'],
+    foot: 'Epävirallinen harjoitussivusto, joka ei liity Maahanmuuttovirastoon. Tiedot lokakuulta 2026. Tarkista ajantasaiset tiedot Migriltä.' },
+  sv: { code: 'SV', dir: 'ltr', tag: 'Övningsprov', soon: 'Kommer snart', theme: 'Byt tema', price: ['Livstidsåtkomst', '14,99 €', 'engångsbetalning', 'Öppnar när sidan lanseras, beräknat ungefär när Migris officiella studiematerial publiceras.', 'Öppnar snart', 'Det här är priset för den här övningssidan, inte Migris provavgift.'], ban: 'Kommer snart – sidan är under uppbyggnad. Nedan finns exempelfrågor.',
+    h1: 'Förbered dig för Finlands medborgarskapsprov',
+    lead: 'Det nya medborgarskapsprovet blir obligatoriskt 2027. Här hittar du de viktigaste uppgifterna och kan prova exempelfrågor redan nu.',
+    count: 'dagar tills provet krävs för nya ansökningar (1.3.2027)',
+    facts: [['För vem', 'Sökande 18–64 år'], ['Börjar', 'Ansökningar från 1.3.2027'], ['Gräns för godkänt', 'Inte offentliggjord än'], ['Pris per försök', 'Inte offentliggjort än']],
+    note: 'Du får göra om provet hur många gånger som helst. Migrationsverket (Migri) har ännu inte meddelat pris eller godkändgräns – vi uppdaterar så fort uppgifterna publiceras.',
+    what: ['Vad är provet?', 'Medborgarskapsprovet är ett nytt tilläggskrav för finskt medborgarskap. Det är digitalt och kan göras på finska eller svenska. Provet ordnas av Migrationsverket (Migri). Ett godkänt resultat går inte ut, och de gamla kraven, som språkkunskaper och bosättningstid, gäller fortfarande.'],
+    topics: ['Ämnesområden', ['Finlands lagar', 'Rättigheter och skyldigheter', 'Jämställdhet', 'Finlands historia och kultur', 'Försvar och värnplikt (preliminärt)'], 'Aktuella nyheter ingår inte. Den uppdaterade listan publiceras av Migri.'],
+    who: ['Vem ska göra provet?', 'Provet gäller sökande i åldern 18–64 år som ansöker om finskt medborgarskap 1.3.2027 eller senare. Tidigare inlämnade ansökningar omfattas inte. Specialarrangemang kan ges vid sjukdom eller funktionsnedsättning, och en del sökande kan göra provet muntligt.'],
+    when: ['Tidtabell och studiematerial', [['1.1.2027', 'Ändringarna i medborgarskapslagen och det nya provet träder i kraft.'], ['Slutet av 2026 eller början av 2027', 'Migri publicerar provdatum, anmälningsanvisningar, provets webbplats och studiematerialet.'], ['1.3.2027', 'Provet krävs för ansökningar som lämnas in från detta datum. Prov ordnas på sju orter: huvudstadsregionen, Tammerfors, Åbo, Uleåborg, Kuopio, Vasa och Rovaniemi.']]],
+    quiz: ['Exempelfrågor', 'Fråga', 'av', 'Rätt!', 'Fel', 'Nästa', 'Se resultat', 'Resultat', 'Försök igen'],
+    foot: 'Inofficiell övningssida som inte är kopplad till Migrationsverket. Uppgifterna gäller oktober 2026. Se Migri för aktuell information.' },
+  ru: { code: 'RU', dir: 'ltr', tag: 'Тренировочный тест', soon: 'Скоро', theme: 'Сменить тему', price: ['Пожизненный доступ', '14,99 €', 'разовый платёж', 'Откроется при запуске сайта, ориентировочно примерно тогда же, когда Migri опубликует официальные учебные материалы.', 'Скоро откроется', 'Это цена этого учебного сайта, а не плата за тест от Migri.'], ban: 'Скоро — сайт ещё в разработке. Ниже — пробные вопросы.',
+    h1: 'Готовьтесь к финскому тесту на гражданство',
+    lead: 'Новый тест на гражданство станет обязательным в 2027 году. Здесь собрана главная информация, а пробные вопросы можно решать уже сейчас.',
+    count: 'дней до начала требования теста для новых заявлений (1.3.2027)',
+    facts: [['Кому', 'Заявителям 18–64 лет'], ['Начало', 'Заявления с 1.3.2027'], ['Проходной балл', 'Пока не объявлен'], ['Стоимость попытки', 'Пока не объявлена']],
+    note: 'Пересдавать можно неограниченное число раз. Миграционная служба (Migri) пока не сообщила ни стоимость, ни проходной балл — мы обновим страницу сразу после публикации.',
+    what: ['Что это за тест?', 'Тест на гражданство — новое дополнительное условие для получения гражданства Финляндии. Тест цифровой, его можно сдавать на финском или шведском языке. Организует тест Миграционная служба Финляндии (Migri). Сданный результат не теряет силу, а прежние условия — знание языка и срок проживания — сохраняются.'],
+    topics: ['Темы теста', ['Законы Финляндии', 'Права и обязанности человека', 'Равенство', 'История и культура Финляндии', 'Основы обороны и воинской повинности (предварительно)'], 'Вопросов о текущих новостях не будет. Актуальный перечень опубликует Migri.'],
+    who: ['Кто должен сдавать тест?', 'Тест нужен заявителям в возрасте 18–64 лет, которые подают заявление на гражданство 1.3.2027 или позже. Тем, кто подал заявление раньше, тест не нужен. При болезни или инвалидности можно получить особые условия, а часть заявителей может сдавать тест устно.'],
+    when: ['Сроки и учебные материалы', [['1.1.2027', 'Вступают в силу изменения в законе о гражданстве и вводится новый тест.'], ['Конец 2026 или начало 2027', 'Migri опубликует даты тестов, порядок записи, сайт теста и учебные материалы.'], ['1.3.2027', 'Тест требуется по заявлениям, поданным с этой даты. Тесты пройдут в семи городах: столичный регион, Тампере, Турку, Оулу, Куопио, Васа и Рованиеми.']]],
+    quiz: ['Пробные вопросы', 'Вопрос', 'из', 'Верно!', 'Неверно', 'Дальше', 'Показать результат', 'Результат', 'Заново'],
+    foot: 'Неофициальный учебный сайт, не связанный с Миграционной службой. Данные на октябрь 2026 г. Актуальную информацию смотрите у Migri.' },
+  ar: { code: 'عربي', dir: 'rtl', tag: 'اختبار تدريبي', soon: 'قريبًا', theme: 'تبديل المظهر', price: ['وصول مدى الحياة', '14.99 €', 'دفعة واحدة', 'يُفتح عند إطلاق الموقع، تقريبًا في وقت نشر Migri للمواد الدراسية الرسمية.', 'يُفتح قريبًا', 'هذا سعر موقع التدريب هذا، وليس رسوم اختبار Migri.'], ban: 'قريبًا — الموقع قيد الإنشاء. أدناه أسئلة تجريبية.',
+    h1: 'استعدّ لاختبار الجنسية الفنلندية',
+    lead: 'سيصبح اختبار الجنسية الجديد إلزاميًا في عام 2027. تجد هنا أهم المعلومات، ويمكنك تجربة أسئلة تجريبية الآن.',
+    count: 'يومًا حتى بدء اشتراط الاختبار على الطلبات الجديدة (1.3.2027)',
+    facts: [['لمن', 'المتقدمون من 18 إلى 64 عامًا'], ['البداية', 'الطلبات المقدّمة من 1.3.2027'], ['درجة النجاح', 'لم تُعلن بعد'], ['رسم المحاولة', 'لم يُعلن بعد']],
+    note: 'يمكن إعادة الاختبار عدد المرات التي تحتاجها. لم تعلن دائرة الهجرة الفنلندية (Migri) الرسوم ولا درجة النجاح بعد، وسنحدّث الصفحة فور نشرها.',
+    what: ['ما هو الاختبار؟', 'اختبار الجنسية شرط إضافي جديد للحصول على الجنسية الفنلندية. وهو اختبار رقمي يمكن أداؤه بالفنلندية أو السويدية، وتنظّمه دائرة الهجرة الفنلندية (Migri). النتيجة الناجحة لا تنتهي صلاحيتها، وتبقى الشروط السابقة، كإتقان اللغة ومدة الإقامة، سارية.'],
+    topics: ['مواضيع الاختبار', ['القوانين الفنلندية', 'حقوق الإنسان وواجباته', 'المساواة', 'تاريخ فنلندا وثقافتها', 'أساسيات الدفاع الوطني والتجنيد (مبدئي)'], 'لن تكون هناك أسئلة عن الأخبار الجارية. القائمة المحدّثة ستنشرها Migri.'],
+    who: ['من عليه أداء الاختبار؟', 'يشمل الاختبار المتقدمين بين 18 و64 عامًا الذين يقدّمون طلب الجنسية في 1.3.2027 أو بعده. من قدّم طلبه قبل ذلك لا يحتاج إلى الاختبار. يمكن الحصول على ترتيبات خاصة بسبب مرض أو إعاقة، وقد يؤدي بعض المتقدمين الاختبار شفهيًا.'],
+    when: ['الجدول الزمني والمواد الدراسية', [['1.1.2027', 'تدخل تعديلات قانون الجنسية حيز التنفيذ ويبدأ العمل بالاختبار الجديد.'], ['نهاية 2026 أو بداية 2027', 'تنشر Migri مواعيد الاختبار وتعليمات التسجيل وموقع الاختبار والمواد الدراسية.'], ['1.3.2027', 'يُشترط الاختبار للطلبات المقدّمة من هذا التاريخ. ستُجرى الاختبارات في سبع مدن: منطقة العاصمة وتامبيري وتوركو وأولو وكوبيو وفاسا وروفانيمي.']]],
+    quiz: ['أسئلة تجريبية', 'سؤال', 'من', 'صحيح!', 'خطأ', 'التالي', 'عرض النتيجة', 'النتيجة', 'أعد المحاولة'],
+    foot: 'موقع تدريبي غير رسمي ولا يرتبط بدائرة الهجرة. المعلومات حتى أكتوبر 2026. راجع Migri للاطلاع على أحدث المعلومات.' },
+};
+
+// a = index för rätt svar. o som array = samma alternativ på alla språk.
+const QS = [
+  { q: { fi: 'Kuinka monta kansanedustajaa eduskunnassa on?', sv: 'Hur många ledamöter har riksdagen?', ru: 'Сколько депутатов в парламенте Финляндии (эдускунте)?', ar: 'كم عدد النواب في البرلمان الفنلندي؟' }, o: ['101', '151', '200', '349'], a: 2 },
+  { q: { fi: 'Minä vuonna Suomi itsenäistyi?', sv: 'Vilket år blev Finland självständigt?', ru: 'В каком году Финляндия стала независимой?', ar: 'في أي عام استقلت فنلندا؟' }, o: ['1809', '1917', '1939', '1952'], a: 1 },
+  { q: { fi: 'Mihin numeroon soitat hengenvaarassa?', sv: 'Vilket nummer ringer du vid akut livsfara?', ru: 'Какой номер набрать при угрозе жизни?', ar: 'أي رقم تتصل به عند الخطر على الحياة؟' }, o: ['1177', '112', '911', '999'], a: 1 },
+  { q: { fi: 'Minä vuonna Suomi liittyi EU:hun?', sv: 'Vilket år gick Finland med i EU?', ru: 'В каком году Финляндия вступила в ЕС?', ar: 'في أي عام انضمت فنلندا إلى الاتحاد الأوروبي؟' }, o: ['1973', '1986', '1995', '2004'], a: 2 },
+  { q: { fi: 'Kuinka monta vuotta presidentin toimikausi kestää?', sv: 'Hur många år varar presidentens mandatperiod?', ru: 'Сколько лет длится срок полномочий президента?', ar: 'كم سنة تدوم ولاية رئيس الجمهورية؟' }, o: ['4', '5', '6', '7'], a: 2 },
+  { q: { fi: 'Minä vuonna naiset saivat äänioikeuden ja vaalikelpoisuuden?', sv: 'Vilket år fick kvinnor rösträtt och rätt att kandidera?', ru: 'В каком году женщины получили право голосовать и избираться?', ar: 'في أي عام حصلت النساء على حق التصويت والترشح؟' }, o: ['1866', '1906', '1921', '1945'], a: 1 },
+  { q: { fi: 'Milloin talvisota käytiin?', sv: 'När utkämpades vinterkriget?', ru: 'Когда шла Зимняя война?', ar: 'متى دارت حرب الشتاء؟' }, o: ['1914–1918', '1939–1940', '1941–1944', '1945–1948'], a: 1 },
+  { q: { fi: 'Minä vuonna Suomi liittyi Natoon?', sv: 'Vilket år gick Finland med i Nato?', ru: 'В каком году Финляндия вступила в НАТО?', ar: 'في أي عام انضمت فنلندا إلى حلف الناتو؟' }, o: ['2004', '2014', '2023', '2025'], a: 2 },
+  { q: { fi: 'Minä vuonna nykyinen perustuslaki tuli voimaan?', sv: 'Vilket år trädde den nuvarande grundlagen i kraft?', ru: 'В каком году вступила в силу действующая конституция?', ar: 'في أي عام دخل الدستور الحالي حيز التنفيذ؟' }, o: ['1919', '1995', '2000', '2012'], a: 2 },
+  { q: { fi: 'Mitkä ovat Suomen kansalliskielet?', sv: 'Vilka är Finlands nationalspråk?', ru: 'Какие языки являются национальными в Финляндии?', ar: 'ما هي اللغات الوطنية في فنلندا؟' },
+    o: { fi: ['Suomi ja englanti', 'Suomi ja ruotsi', 'Suomi ja saame', 'Vain suomi'], sv: ['Finska och engelska', 'Finska och svenska', 'Finska och samiska', 'Bara finska'], ru: ['Финский и английский', 'Финский и шведский', 'Финский и саамский', 'Только финский'], ar: ['الفنلندية والإنجليزية', 'الفنلندية والسويدية', 'الفنلندية والسامية', 'الفنلندية فقط'] }, a: 1 },
+];
+
+let lang = 'fi', qi = 0, pick = null, score = 0;
+try { const s = localStorage.getItem('lang'); if (LANGS[s]) lang = s; } catch (e) {}
+
+let dark = document.documentElement.classList.contains('dark');
+const SUN = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+const MOON = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+const toggleTheme = () => { dark = !dark; try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {} render(); };
+const setLang = (l) => { lang = l; qi = 0; pick = null; score = 0; try { localStorage.setItem('lang', l); } catch (e) {} render(); };
+const answer = (k) => { if (pick !== null) return; pick = k; if (k === QS[qi].a) score++; render(); };
+const next = () => { qi++; pick = null; render(); };
+const again = () => { qi = 0; pick = null; score = 0; render(); };
+
+const sec = (h, body) => `<section class="rounded-2xl bg-white p-6 ring-1 ring-ink/10 ${SH}"><h2 class="mb-3 flex items-center gap-3 font-serif text-2xl font-bold"><span class="h-1 w-6 shrink-0 rounded bg-gold"></span>${h}</h2>${body}</section>`;
+const BTN = 'rounded-xl bg-brand px-5 py-3 font-semibold text-white hover:bg-[#003f8a] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold';
+
+function quiz(l) {
+  const t = l.quiz, n = QS.length;
+  if (qi >= n) {
+    return `<div class="text-center"><p class="text-sm text-ink/60">${t[7]}</p><p class="my-2 font-serif text-6xl font-bold text-brand">${score} <span class="text-3xl text-ink/40">${t[2]} ${n}</span></p><button onclick="again()" class="${BTN} mt-4">${t[8]}</button></div>`;
+  }
+  const q = QS[qi], opts = Array.isArray(q.o) ? q.o : q.o[lang], done = pick !== null;
+  const btns = opts.map((o, k) => {
+    let c = 'border-ink/15 bg-white hover:border-brand';
+    if (done) c = k === q.a ? 'border-emerald-600 bg-emerald-50 text-emerald-900' : k === pick ? 'border-rose-600 bg-rose-50 text-rose-900' : 'border-ink/10 bg-white opacity-50';
+    return `<button onclick="answer(${k})" ${done ? 'disabled' : ''} class="w-full rounded-xl border-2 p-3.5 text-start transition ${c}">${o}</button>`;
+  }).join('');
+  return `<p class="mb-2 text-sm font-semibold text-ink/60">${t[1]} ${qi + 1} ${t[2]} ${n}</p>
+    <div class="mb-4 h-1.5 overflow-hidden rounded-full bg-mist"><div class="h-full bg-brand transition-all" style="width:${((qi + (done ? 1 : 0)) / n) * 100}%"></div></div>
+    <h3 class="mb-4 text-lg font-semibold">${q.q[lang]}</h3><div class="space-y-2.5">${btns}</div>
+    ${done ? `<p class="mt-4 font-semibold ${pick === q.a ? 'text-emerald-700' : 'text-rose-700'}">${pick === q.a ? t[3] : t[4]}</p><button onclick="next()" class="${BTN} mt-3 w-full sm:w-auto">${qi + 1 < n ? t[5] : t[6]}</button>` : ''}`;
+}
+
+const price = (l) => { const p = l.price; return `<section class="rounded-2xl border-t-4 border-gold bg-white p-6 ring-1 ring-ink/10 ${SH}"><p class="text-xs font-semibold uppercase tracking-wide text-brand">${l.soon}</p><h2 class="mt-1 font-serif text-2xl font-bold">${p[0]}</h2><p class="mt-3 flex items-baseline gap-2"><span class="font-serif text-5xl font-bold text-brand">${p[1]}</span><span class="text-sm text-ink/60">${p[2]}</span></p><p class="mt-3">${p[3]}</p><button disabled class="mt-4 w-full cursor-not-allowed rounded-xl bg-mist px-5 py-3 font-semibold text-ink/60">${p[4]}</button><p class="mt-3 text-xs text-ink/60">${p[5]}</p></section>`; };
+
+function render() {
+  const l = LANGS[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = l.dir;
+  document.documentElement.classList.toggle('dark', dark);
+  const th = document.getElementById('th');
+  th.innerHTML = dark ? SUN : MOON; th.setAttribute('aria-label', l.theme);
+  document.getElementById('ban').textContent = l.ban;
+  document.getElementById('logo').innerHTML = LOGO;
+  document.getElementById('fav').href = 'data:image/svg+xml,' + encodeURIComponent(LOGO);
+  document.getElementById('tag').textContent = l.tag;
+  document.getElementById('foot').textContent = l.foot;
+  document.getElementById('sw').innerHTML = Object.keys(LANGS).map((k) =>
+    `<button onclick="setLang('${k}')" aria-pressed="${k === lang}" class="rounded-full px-3 py-1.5 ${k === lang ? 'bg-brand text-white' : 'text-ink/70 hover:text-brand'}">${LANGS[k].code}</button>`).join('');
+
+  const days = Math.max(0, Math.ceil((new Date(TEST_START) - new Date()) / 864e5));
+  const vals = [l.facts[0][1], l.facts[1][1], OFFICIAL.pass ?? l.facts[2][1], OFFICIAL.fee ?? l.facts[3][1]];
+  const tiles = l.facts.map((f, k) => `<div class="rounded-xl bg-white p-4 ring-1 ring-ink/10 border-s-4 border-gold ${SH}"><p class="text-xs font-semibold uppercase tracking-wide text-ink/55">${f[0]}</p><p class="mt-1 font-semibold ${k > 1 && !(k === 2 ? OFFICIAL.pass : OFFICIAL.fee) ? 'text-ink/60' : ''}">${vals[k]}</p></div>`).join('');
+  const steps = l.when[1].map(([d, t]) => `<li class="relative"><span class="absolute -start-[1.65rem] top-1.5 h-3 w-3 rounded-full bg-brand ring-4 ring-white"></span><p class="font-semibold text-brand">${d}</p><p>${t}</p></li>`).join('');
+
+  document.getElementById('app').innerHTML = `
+    <section class="relative overflow-hidden rounded-3xl bg-brand p-7 text-white ring-1 ring-white/10 shadow-[0_24px_48px_-28px_rgba(0,82,180,0.7)] sm:p-10 lg:p-14">
+      <div class="absolute inset-y-0 left-[16%] w-4 bg-white/10"></div><div class="absolute inset-x-0 top-[60%] h-4 bg-white/10"></div>
+      <div class="relative grid items-end gap-8 lg:grid-cols-[1fr_auto]">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full bg-gold px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-ink"><span class="h-2 w-2 animate-pulse rounded-full bg-ink"></span>${l.soon}</span>
+          <h1 class="mt-4 max-w-2xl font-serif text-3xl font-bold leading-tight sm:text-5xl lg:text-6xl">${l.h1}</h1>
+          <p class="mt-4 max-w-xl text-white/85">${l.lead}</p>
+        </div>
+        <div class="flex items-center gap-4 rounded-2xl bg-white/10 px-5 py-4 ring-1 ring-white/15 lg:max-w-[15rem] lg:flex-col lg:items-start lg:gap-1"><span class="font-serif text-6xl font-bold leading-none text-gold">${days}</span><span class="text-sm text-white/80">${l.count}</span></div>
+      </div>
+    </section>
+    <div><div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">${tiles}</div><p class="mt-3 text-sm text-ink/70">${l.note}</p></div>
+    <div class="grid gap-6 lg:grid-cols-[1fr_26rem] lg:items-start">
+      <div class="space-y-6">
+        ${sec(l.what[0], `<p>${l.what[1]}</p>`)}
+        ${sec(l.topics[0], `<ul class="flex flex-wrap gap-2">${l.topics[1].map((x) => `<li class="rounded-full bg-mist px-3 py-1.5 text-sm font-medium text-brand">${x}</li>`).join('')}</ul><p class="mt-3 text-sm text-ink/70">${l.topics[2]}</p>`)}
+        ${sec(l.who[0], `<p>${l.who[1]}</p>`)}
+        ${sec(l.when[0], `<ol class="space-y-5 border-s-2 border-brand/20 ps-5">${steps}</ol>`)}
+      </div>
+      <aside class="space-y-6">${price(l)}${sec(l.quiz[0], quiz(l))}</aside>
+    </div>`;
+}
+render();
+</script>
+</body>
+</html>
