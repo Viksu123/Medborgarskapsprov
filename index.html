@@ -61,6 +61,7 @@ tailwind.config = { theme: { extend: {
   <p id="foot"></p>
   <a href="https://migri.fi" target="_blank" rel="noopener" class="mt-2 inline-block font-semibold text-brand underline">migri.fi</a>
   <button id="cc-set" onclick="ccOpen()" class="ms-4 mt-2 inline-block font-semibold text-brand underline"></button>
+  <a id="pol" href="/policyer" class="ms-4 mt-2 inline-block underline"></a>
 </footer>
 
 <script>
@@ -229,11 +230,11 @@ render();
 const GA_ID = 'G-360H1BB2QF'; // (i Next.js: process.env.NEXT_PUBLIC_GA_ID)
 const CC_KEY = 'cc-v1';
 const CC = {
-  fi: { t: 'Evästeet', p: 'Käytämme Google Analyticsia (Google) sivuston käytön mittaamiseen vain suostumuksellasi. Ilman suostumusta analytiikkaevästeitä ei aseteta eikä tietoja lähetetä. Voit muuttaa valintaasi milloin tahansa sivun alareunasta.', y: 'Hyväksy kaikki', n: 'Hylkää', s: 'Evästeasetukset' },
-  sv: { t: 'Cookies', p: 'Vi använder Google Analytics (Google) för att mäta hur sidan används, men bara om du samtycker. Utan samtycke sätts inga analyscookies och inga uppgifter skickas. Du kan ändra ditt val när som helst längst ned på sidan.', y: 'Godkänn alla', n: 'Neka', s: 'Cookie-inställningar' },
-  en: { t: 'Cookies', p: 'We use Google Analytics (Google) to measure how the site is used, but only with your consent. Without consent no analytics cookies are set and no data is sent. You can change your choice at any time at the bottom of the page.', y: 'Accept all', n: 'Decline', s: 'Cookie settings' },
-  ru: { t: 'Файлы cookie', p: 'Мы используем Google Analytics (Google), чтобы измерять использование сайта, но только с вашего согласия. Без согласия аналитические cookie не устанавливаются и данные не передаются. Изменить выбор можно в любой момент внизу страницы.', y: 'Принять все', n: 'Отклонить', s: 'Настройки cookie' },
-  ar: { t: 'ملفات تعريف الارتباط', p: 'نستخدم Google Analytics (من Google) لقياس استخدام الموقع، ولكن بموافقتك فقط. بدون الموافقة لا تُضبط ملفات تعريف ارتباط تحليلية ولا تُرسل أي بيانات. يمكنك تغيير اختيارك في أي وقت من أسفل الصفحة.', y: 'قبول الكل', n: 'رفض', s: 'إعدادات ملفات تعريف الارتباط' },
+  fi: { t: 'Evästeet', p: 'Käytämme Google Analyticsia (Google) sivuston käytön mittaamiseen vain suostumuksellasi. Ilman suostumusta analytiikkaevästeitä ei aseteta eikä tietoja lähetetä. Voit muuttaa valintaasi milloin tahansa sivun alareunasta.', y: 'Hyväksy kaikki', n: 'Hylkää', s: 'Evästeasetukset', l: 'Käytännöt' },
+  sv: { t: 'Cookies', p: 'Vi använder Google Analytics (Google) för att mäta hur sidan används, men bara om du samtycker. Utan samtycke sätts inga analyscookies och inga uppgifter skickas. Du kan ändra ditt val när som helst längst ned på sidan.', y: 'Godkänn alla', n: 'Neka', s: 'Cookie-inställningar', l: 'Policyer' },
+  en: { t: 'Cookies', p: 'We use Google Analytics (Google) to measure how the site is used, but only with your consent. Without consent no analytics cookies are set and no data is sent. You can change your choice at any time at the bottom of the page.', y: 'Accept all', n: 'Decline', s: 'Cookie settings', l: 'Policies' },
+  ru: { t: 'Файлы cookie', p: 'Мы используем Google Analytics (Google), чтобы измерять использование сайта, но только с вашего согласия. Без согласия аналитические cookie не устанавливаются и данные не передаются. Изменить выбор можно в любой момент внизу страницы.', y: 'Принять все', n: 'Отклонить', s: 'Настройки cookie', l: 'Политики' },
+  ar: { t: 'ملفات تعريف الارتباط', p: 'نستخدم Google Analytics (من Google) لقياس استخدام الموقع، ولكن بموافقتك فقط. بدون الموافقة لا تُضبط ملفات تعريف ارتباط تحليلية ولا تُرسل أي بيانات. يمكنك تغيير اختيارك في أي وقت من أسفل الصفحة.', y: 'قبول الكل', n: 'رفض', s: 'إعدادات ملفات تعريف الارتباط', l: 'السياسات' },
 };
 // Språk: sidans valda språk, annars webbläsarens (fi/sv/ru/ar), annars engelska
 function ccLang() {
@@ -271,9 +272,10 @@ function ccRefresh() {
   if (el) {
     el.dir = ccLang() === 'ar' ? 'rtl' : 'ltr';
     document.getElementById('cc-t').textContent = t.t; document.getElementById('cc-p').textContent = t.p;
-    document.getElementById('cc-n').textContent = t.n; document.getElementById('cc-y').textContent = t.y;
+    document.getElementById('cc-n').textContent = t.n; document.getElementById('cc-y').textContent = t.y; document.getElementById('cc-l').textContent = t.l;
   }
   const b = document.getElementById('cc-set'); if (b) b.textContent = t.s;
+  const pl = document.getElementById('pol'); if (pl) pl.textContent = t.l;
 }
 function ccOpen() { document.getElementById('cc').hidden = false; ccRefresh(); document.getElementById('cc-n').focus(); }
 function ccChoose(a) { ccSave(a); a ? loadGA() : stopGA(); document.getElementById('cc').hidden = true; }
@@ -282,14 +284,14 @@ function ccChoose(a) { ccSave(a); a ? loadGA() : stopGA(); document.getElementBy
   const el = document.createElement('div');
   el.id = 'cc'; el.hidden = true; el.setAttribute('role', 'dialog'); el.setAttribute('aria-labelledby', 'cc-t');
   el.className = 'fixed inset-x-3 bottom-3 z-50 rounded-2xl border-t-4 border-gold bg-white p-5 ring-1 ring-ink/10 shadow-[0_20px_50px_-12px_rgba(14,27,51,0.35)] sm:inset-x-auto sm:start-6 sm:bottom-6 sm:max-w-md';
-  el.innerHTML = '<h2 id="cc-t" class="font-serif text-lg font-bold"></h2><p id="cc-p" class="mt-2 text-sm text-ink/70"></p>' +
+  el.innerHTML = '<h2 id="cc-t" class="font-serif text-lg font-bold"></h2><p id="cc-p" class="mt-2 text-sm text-ink/70"></p><a id="cc-l" href="/policyer" class="mt-2 inline-block text-sm font-semibold text-brand underline"></a>' +
     '<div class="mt-4 grid grid-cols-2 gap-3">' +
     '<button id="cc-n" onclick="ccChoose(false)" class="rounded-xl border-2 border-brand px-4 py-2.5 text-sm font-semibold text-brand hover:opacity-80"></button>' +
     '<button id="cc-y" onclick="ccChoose(true)" class="rounded-xl border-2 border-brand bg-brand px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90"></button></div>';
   document.body.appendChild(el);
   const c = ccGet();
   if (c && c.analytics) loadGA();
-  if (!c) el.hidden = false;
+  if (!c || location.hash === '#cookies') el.hidden = false;
   ccRefresh();
 })();
 </script>
