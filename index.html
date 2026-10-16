@@ -42,6 +42,9 @@ tailwind.config = { theme: { extend: {
   .dark .text-ink\/40, .dark .text-ink\/55, .dark .text-ink\/60, .dark .text-ink\/70 { color: rgba(236,232,223,.62); }
   .dark .bg-emerald-50 { background-color: rgba(16,185,129,.14); } .dark .text-emerald-900 { color: #A7F3D0; } .dark .text-emerald-700 { color: #6EE7B7; }
   .dark .bg-rose-50 { background-color: rgba(244,63,94,.14); } .dark .text-rose-900 { color: #FECDD3; } .dark .text-rose-700 { color: #FDA4AF; }
+  .dark #cc { color: #ECE8DF; }
+  .dark #cc-t { color: #FFD45C; }
+  .dark #cc-n { border-color: #A9C8F5; }
 </style>
 </head>
 <body class="bg-paper font-sans text-ink antialiased" style="background-image:radial-gradient(60rem 26rem at 50% -6rem,#E2EBF8,transparent 70%);background-repeat:no-repeat">
@@ -281,7 +284,7 @@ function ccChoose(a) { ccSave(a); a ? loadGA() : stopGA(); document.getElementBy
 (function () {
   const el = document.createElement('div');
   el.id = 'cc'; el.hidden = true; el.setAttribute('role', 'dialog'); el.setAttribute('aria-labelledby', 'cc-t');
-  el.className = 'fixed inset-x-3 bottom-3 z-50 rounded-2xl bg-white p-5 text-ink ring-1 ring-ink/10 shadow-[0_20px_50px_-12px_rgba(14,27,51,0.35)] sm:inset-x-auto sm:start-6 sm:bottom-6 sm:max-w-md';
+  el.className = 'fixed inset-x-3 bottom-3 z-50 rounded-2xl border-t-4 border-gold bg-white p-5 ring-1 ring-ink/10 shadow-[0_20px_50px_-12px_rgba(14,27,51,0.35)] sm:inset-x-auto sm:start-6 sm:bottom-6 sm:max-w-md';
   el.innerHTML = '<h2 id="cc-t" class="font-serif text-lg font-bold"></h2><p id="cc-p" class="mt-2 text-sm text-ink/70"></p>' +
     '<div class="mt-4 grid grid-cols-2 gap-3">' +
     '<button id="cc-n" onclick="ccChoose(false)" class="rounded-xl border-2 border-brand px-4 py-2.5 text-sm font-semibold text-brand hover:opacity-80"></button>' +
