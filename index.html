@@ -80,7 +80,7 @@ const P2 = 'M7.6 14.4Q32 6 56.4 14.4V36C56.4 52 46 60.8 32 66 18 60.8 7.6 52 7.6
 const LOGO = `<svg viewBox="0 0 64 72" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><clipPath id="f"><path d="${P2}"/></clipPath></defs><path d="${P0}" fill="#0052B4"/><path d="${P1}" fill="none" stroke="#FFC107" stroke-width=".9"/><path d="${P2}" fill="#fff"/><g clip-path="url(#f)" fill="#0052B4"><rect x="22" y="0" width="8" height="72"/><rect x="0" y="30" width="64" height="8"/></g><g transform="translate(27.5 34) rotate(-40) scale(1.06) translate(1.5 0)">${piece(PB, '#FFC107')}${piece(PA, '#fff')}</g></svg>`;
 
 const LANGS = {
-  fi: { code: 'FI', dir: 'ltr', tag: 'Harjoituskoe', soon: 'Tulossa pian', theme: 'Vaihda ulkoasua', price: ['Elinikäinen pääsy', '14,99 €', 'kertamaksu', 'Avautuu sivuston lanseerauksessa, arviolta samoihin aikoihin, kun Migrin virallinen oppimateriaali julkaistaan.', 'Avautuu pian', 'Tämä on tämän harjoitussivuston hinta, ei Migrin kokeen maksu.'], ban: 'Tulossa pian – sivusto on vielä rakenteilla. Alla on näytetehtäviä.',
+  fi: { code: 'FI', dir: 'ltr', tag: 'Harjoituskoe', only: 'Koe voidaan suorittaa vain suomeksi tai ruotsiksi – ei muilla kielillä, kuten englanniksi, venäjäksi tai arabiaksi. Näytetehtävät ovat tällä sivulla myös muilla kielillä vain harjoittelun tueksi.', soon: 'Tulossa pian', theme: 'Vaihda ulkoasua', price: ['Elinikäinen pääsy', '14,99 €', 'kertamaksu', 'Avautuu sivuston lanseerauksessa, arviolta samoihin aikoihin, kun Migrin virallinen oppimateriaali julkaistaan.', 'Avautuu pian', 'Tämä on tämän harjoitussivuston hinta, ei Migrin kokeen maksu.'], ban: 'Tulossa pian – sivusto on vielä rakenteilla. Alla on näytetehtäviä.',
     h1: 'Valmistaudu Suomen kansalaisuuskokeeseen',
     lead: 'Uusi kansalaisuuskoe tulee pakolliseksi vuonna 2027. Täältä löydät tärkeimmät tiedot ja voit kokeilla näytetehtäviä jo nyt.',
     count: 'päivää siihen, kun koe vaaditaan uusilta hakemuksilta (1.3.2027)',
@@ -92,7 +92,7 @@ const LANGS = {
     when: ['Aikataulu ja oppimateriaali', [['1.1.2027', 'Kansalaisuuslain muutokset ja uusi koe tulevat voimaan.'], ['Vuoden 2026 lopussa tai 2027 alussa', 'Migri julkaisee koepäivät, ilmoittautumisohjeet, kokeen verkkosivut ja oppimateriaalin.'], ['1.3.2027', 'Koe vaaditaan tästä päivästä jätetyiltä hakemuksilta. Kokeita järjestetään seitsemällä paikkakunnalla: pääkaupunkiseutu, Tampere, Turku, Oulu, Kuopio, Vaasa ja Rovaniemi.']]],
     quiz: ['Näytetehtävät', 'Kysymys', '/', 'Oikein!', 'Väärin', 'Seuraava', 'Näytä tulos', 'Tulos', 'Yritä uudelleen'],
     foot: 'Epävirallinen harjoitussivusto, joka ei liity Maahanmuuttovirastoon. Tiedot lokakuulta 2026. Tarkista ajantasaiset tiedot Migriltä.' },
-  sv: { code: 'SV', dir: 'ltr', tag: 'Övningsprov', soon: 'Kommer snart', theme: 'Byt tema', price: ['Livstidsåtkomst', '14,99 €', 'engångsbetalning', 'Öppnar när sidan lanseras, beräknat ungefär när Migris officiella studiematerial publiceras.', 'Öppnar snart', 'Det här är priset för den här övningssidan, inte Migris provavgift.'], ban: 'Kommer snart – sidan är under uppbyggnad. Nedan finns exempelfrågor.',
+  sv: { code: 'SV', dir: 'ltr', tag: 'Övningsprov', only: 'Provet kan bara göras på finska eller svenska – inte på andra språk, som engelska, ryska eller arabiska. Exempelfrågorna finns här på fler språk enbart som stöd för övning.', soon: 'Kommer snart', theme: 'Byt tema', price: ['Livstidsåtkomst', '14,99 €', 'engångsbetalning', 'Öppnar när sidan lanseras, beräknat ungefär när Migris officiella studiematerial publiceras.', 'Öppnar snart', 'Det här är priset för den här övningssidan, inte Migris provavgift.'], ban: 'Kommer snart – sidan är under uppbyggnad. Nedan finns exempelfrågor.',
     h1: 'Förbered dig för Finlands medborgarskapsprov',
     lead: 'Det nya medborgarskapsprovet blir obligatoriskt 2027. Här hittar du de viktigaste uppgifterna och kan prova exempelfrågor redan nu.',
     count: 'dagar tills provet krävs för nya ansökningar (1.3.2027)',
@@ -104,7 +104,7 @@ const LANGS = {
     when: ['Tidtabell och studiematerial', [['1.1.2027', 'Ändringarna i medborgarskapslagen och det nya provet träder i kraft.'], ['Slutet av 2026 eller början av 2027', 'Migri publicerar provdatum, anmälningsanvisningar, provets webbplats och studiematerialet.'], ['1.3.2027', 'Provet krävs för ansökningar som lämnas in från detta datum. Prov ordnas på sju orter: huvudstadsregionen, Tammerfors, Åbo, Uleåborg, Kuopio, Vasa och Rovaniemi.']]],
     quiz: ['Exempelfrågor', 'Fråga', 'av', 'Rätt!', 'Fel', 'Nästa', 'Se resultat', 'Resultat', 'Försök igen'],
     foot: 'Inofficiell övningssida som inte är kopplad till Migrationsverket. Uppgifterna gäller oktober 2026. Se Migri för aktuell information.' },
-  ru: { code: 'RU', dir: 'ltr', tag: 'Тренировочный тест', soon: 'Скоро', theme: 'Сменить тему', price: ['Пожизненный доступ', '14,99 €', 'разовый платёж', 'Откроется при запуске сайта, ориентировочно примерно тогда же, когда Migri опубликует официальные учебные материалы.', 'Скоро откроется', 'Это цена этого учебного сайта, а не плата за тест от Migri.'], ban: 'Скоро — сайт ещё в разработке. Ниже — пробные вопросы.',
+  ru: { code: 'RU', dir: 'ltr', tag: 'Тренировочный тест', only: 'Тест можно сдавать только на финском или шведском языке — не на других языках, например английском, русском или арабском. Пробные вопросы на этом сайте доступны и на других языках только как помощь в подготовке.', soon: 'Скоро', theme: 'Сменить тему', price: ['Пожизненный доступ', '14,99 €', 'разовый платёж', 'Откроется при запуске сайта, ориентировочно примерно тогда же, когда Migri опубликует официальные учебные материалы.', 'Скоро откроется', 'Это цена этого учебного сайта, а не плата за тест от Migri.'], ban: 'Скоро — сайт ещё в разработке. Ниже — пробные вопросы.',
     h1: 'Готовьтесь к финскому тесту на гражданство',
     lead: 'Новый тест на гражданство станет обязательным в 2027 году. Здесь собрана главная информация, а пробные вопросы можно решать уже сейчас.',
     count: 'дней до начала требования теста для новых заявлений (1.3.2027)',
@@ -116,7 +116,7 @@ const LANGS = {
     when: ['Сроки и учебные материалы', [['1.1.2027', 'Вступают в силу изменения в законе о гражданстве и вводится новый тест.'], ['Конец 2026 или начало 2027', 'Migri опубликует даты тестов, порядок записи, сайт теста и учебные материалы.'], ['1.3.2027', 'Тест требуется по заявлениям, поданным с этой даты. Тесты пройдут в семи городах: столичный регион, Тампере, Турку, Оулу, Куопио, Васа и Рованиеми.']]],
     quiz: ['Пробные вопросы', 'Вопрос', 'из', 'Верно!', 'Неверно', 'Дальше', 'Показать результат', 'Результат', 'Заново'],
     foot: 'Неофициальный учебный сайт, не связанный с Миграционной службой. Данные на октябрь 2026 г. Актуальную информацию смотрите у Migri.' },
-  ar: { code: 'عربي', dir: 'rtl', tag: 'اختبار تدريبي', soon: 'قريبًا', theme: 'تبديل المظهر', price: ['وصول مدى الحياة', '14.99 €', 'دفعة واحدة', 'يُفتح عند إطلاق الموقع، تقريبًا في وقت نشر Migri للمواد الدراسية الرسمية.', 'يُفتح قريبًا', 'هذا سعر موقع التدريب هذا، وليس رسوم اختبار Migri.'], ban: 'قريبًا — الموقع قيد الإنشاء. أدناه أسئلة تجريبية.',
+  ar: { code: 'عربي', dir: 'rtl', tag: 'اختبار تدريبي', only: 'يمكن أداء الاختبار بالفنلندية أو السويدية فقط، وليس بلغات أخرى مثل الإنجليزية أو الروسية أو العربية. الأسئلة التجريبية في هذا الموقع متوفرة بلغات أخرى لمساعدتك على التدريب فقط.', soon: 'قريبًا', theme: 'تبديل المظهر', price: ['وصول مدى الحياة', '14.99 €', 'دفعة واحدة', 'يُفتح عند إطلاق الموقع، تقريبًا في وقت نشر Migri للمواد الدراسية الرسمية.', 'يُفتح قريبًا', 'هذا سعر موقع التدريب هذا، وليس رسوم اختبار Migri.'], ban: 'قريبًا — الموقع قيد الإنشاء. أدناه أسئلة تجريبية.',
     h1: 'استعدّ لاختبار الجنسية الفنلندية',
     lead: 'سيصبح اختبار الجنسية الجديد إلزاميًا في عام 2027. تجد هنا أهم المعلومات، ويمكنك تجربة أسئلة تجريبية الآن.',
     count: 'يومًا حتى بدء اشتراط الاختبار على الطلبات الجديدة (1.3.2027)',
@@ -214,7 +214,7 @@ function render() {
     <div><div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">${tiles}</div><p class="mt-3 text-sm text-ink/70">${l.note}</p></div>
     <div class="grid gap-6 lg:grid-cols-[1fr_26rem] lg:items-start">
       <div class="space-y-6">
-        ${sec(l.what[0], `<p>${l.what[1]}</p>`)}
+        ${sec(l.what[0], `<p>${l.what[1]}</p><p class="mt-4 border-s-4 border-gold bg-mist p-3 text-sm font-semibold">${l.only}</p>`)}
         ${sec(l.topics[0], `<ul class="flex flex-wrap gap-2">${l.topics[1].map((x) => `<li class="rounded-full bg-mist px-3 py-1.5 text-sm font-medium text-brand">${x}</li>`).join('')}</ul><p class="mt-3 text-sm text-ink/70">${l.topics[2]}</p>`)}
         ${sec(l.who[0], `<p>${l.who[1]}</p>`)}
         ${sec(l.when[0], `<ol class="space-y-5 border-s-2 border-brand/20 ps-5">${steps}</ol>`)}
